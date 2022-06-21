@@ -1,0 +1,46 @@
+<!DOCUTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSLesson</title>
+</head>
+<body>
+<h1>平均の計算</h1>
+X:<input type="number" id="num1" value="" placeholder="Enter Number Here"><br>
+Y:<input type="number" id="num2" value="" placeholder="Enter Number Here"><br>
+<button onclick="calc('plus')">+</button>
+<button onclick="calc('minus')">-</button>
+<button onclick="calc('multi')">*</button>
+<button onclick="calc('division')">/</button>
+<button onclick="calc('mod')">%</button>
+<div id="result"></div>
+<script>
+    const num1 = document.getElementById("num1");
+    const num2 = document.getElementById("num2");
+    const result = document.getElementById("result");
+    const calc=(ope)=>{
+        let n1 = parseInt(num1.value);
+        let n2 = parseInt(num2.value);
+        let str = "";
+        switch(ope){
+            case "plus":
+                str=`　${n1}<br>+${n2}<br>=${n1+n2}`;
+            break;
+            case "minus":
+                str=`${n1}-${n2}=${n1-n2}`;
+            break;
+            case "multi":
+                str=`${n1}*${n2}=${n1*n2}`;
+            break;
+            case "division":
+                str=`${n1}/${n2}=${n1/n2}`;
+            break;
+            case "mod":
+                str=`${n1}%${n2}=${n1%n2}`;
+            break;
+        }
+        result.innerHTML = str;
+    }
+</script>
+</body>
+</html>
